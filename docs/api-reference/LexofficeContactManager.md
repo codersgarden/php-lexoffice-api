@@ -1,4 +1,3 @@
-```markdown
 # LexofficeContactManager
 
 ## Description
