@@ -15,6 +15,6 @@ class SomeMainClass
 
     public function doSomething()
     {
-        echo "Hello World!";
+        echo "Hello World! ";
     }
 }
