@@ -3,10 +3,10 @@
     "description": "PHP Laravel Package for LexOffice APIs.",
     "type": "library",
     "require": {
-        "php": ">=7.4", 
+        "php": ">=7.4",
         "guzzlehttp/guzzle": "^7.0",
         "spatie/laravel-medialibrary": "^10.0",
-        "illuminate/http": "^9.0|^10.0" 
+        "illuminate/http": "^9.0|^10.0|^11.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.0",
@@ -22,7 +22,7 @@
     "authors": [
         {
             "name": "Dev Codersgarden",
-            "email": "info.codersgarden@gmail.com" 
+            "email": "info.codersgarden@gmail.com"
         }
     ],
     "minimum-stability": "stable",
