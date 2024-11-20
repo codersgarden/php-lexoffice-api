@@ -6,19 +6,9 @@ use GuzzleHttp\Exception\RequestException;
 
 class LexofficeCountriesManager extends LexofficeBase
 {
-    /**
-     * @var Client The HTTP client used for API requests.
-     */
-    protected $client;
-
-    /**
-     * LexofficeCountriesManager constructor.
-     *
-     * @param Client $client The HTTP client instance.
-     */
-    public function __construct(Client $client)
+    public function __construct()
     {
-        $this->client = $client;
+        parent::__construct();
     }
 
     /**
