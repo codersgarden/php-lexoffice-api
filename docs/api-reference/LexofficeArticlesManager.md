@@ -1,6 +1,6 @@
-# LexofficeArticles Class Documentation
+# LexofficeArticlesManager Class Documentation
 
-The `LexofficeArticles` class provides seamless integration with the LexOffice API for managing articles. This class supports operations such as creating, retrieving, updating, and deleting articles, as well as retrieving filtered lists of articles.
+The `LexofficeArticlesManager` class provides seamless integration with the LexOffice API for managing articles. This class supports operations such as creating, retrieving, updating, and deleting articles, as well as retrieving filtered lists of articles.
 
 ## Table of Contents
 1. [Creating an Article](#creating-an-article)
@@ -30,7 +30,7 @@ $articleData = [
         'taxRate' => 19 // Example tax rates: 0, 7, or 19
     ]
 ];
-$response = $lexofficeArticles->create($articleData);
+$response = $lexofficeArticlesManager->create($articleData);
 ```
 
 **Description:**
@@ -41,7 +41,7 @@ $response = $lexofficeArticles->create($articleData);
 
 ```php
 $articleId = 'eb46d328-e1dc-11ee-8444-2fadfc15a567'; // Example ID
-$response = $lexofficeArticles->find($articleId);
+$response = $lexofficeArticlesManager->find($articleId);
 ```
 
 **Description:**
@@ -66,7 +66,7 @@ $updatedArticleData = [
     ],
     'version' => 1 // Current version of the article
 ];
-$response = $lexofficeArticles->update($articleId, $updatedArticleData);
+$response = $lexofficeArticlesManager->update($articleId, $updatedArticleData);
 ```
 
 **Description:**
@@ -76,7 +76,7 @@ $response = $lexofficeArticles->update($articleId, $updatedArticleData);
 
 ```php
 $articleId = 'eb46d328-e1dc-11ee-8444-2fadfc15a567'; // Example ID
-$response = $lexofficeArticles->delete($articleId);
+$response = $lexofficeArticlesManager->delete($articleId);
 ```
 
 **Description:**
@@ -89,7 +89,7 @@ $filters = [
     'type' => 'PRODUCT', // Example filter to only get 'PRODUCT' type articles
     'gtin' => '9783648170632'
 ];
-$response = $lexofficeArticles->all($filters);
+$response = $lexofficeArticlesManager->all($filters);
 ```
 
 **Description:**
@@ -99,23 +99,23 @@ $response = $lexofficeArticles->all($filters);
 
 ## Example Usage in a Controller
 
-Below is a complete example demonstrating how to use the `LexofficeArticles` class within a Laravel controller:
+Below is a complete example demonstrating how to use the `LexofficeArticlesManager` class within a Laravel controller:
 
 ```php
 <?php
 
 namespace App\Http\Controllers;
 
-use Codersgarden\PhpLexofficeApi\LexofficeArticles;
+use Codersgarden\PhpLexofficeApi\LexofficeArticlesManager;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    protected $lexofficeArticles;
+    protected $lexofficeArticlesManager;
 
-    public function __construct(LexofficeArticles $lexofficeArticles)
+    public function __construct(LexofficeArticlesManager $lexofficeArticlesManager)
     {
-        $this->lexofficeArticles = $lexofficeArticles;
+        $this->LexofficeArticlesManager = $lexofficeArticlesManager;
     }
 
     public function index()
@@ -136,12 +136,12 @@ class HomeController extends Controller
                 'taxRate' => 19 // Example tax rates: 0, 7, or 19
             ]
         ];
-        $createResponse = $this->lexofficeArticles->create($articleData);
+        $createResponse = $this->LexofficeArticlesManager->create($articleData);
         dd($createResponse);
 
         // 2. Retrieve an Article by ID
         $articleId = 'eb46d328-e1dc-11ee-8444-2fadfc15a567'; // Example ID
-        $findResponse = $this->lexofficeArticles->find($articleId);
+        $findResponse = $this->LexofficeArticlesManager->find($articleId);
         dd($findResponse);
 
         // 3. Update an Article
@@ -161,11 +161,11 @@ class HomeController extends Controller
             ],
             'version' => 1 // Current version of the article
         ];
-        $updateResponse = $this->lexofficeArticles->update($articleId, $updatedArticleData);
+        $updateResponse = $this->LexofficeArticlesManager->update($articleId, $updatedArticleData);
         dd($updateResponse);
 
         // 4. Delete an Article
-        $deleteResponse = $this->lexofficeArticles->delete($articleId);
+        $deleteResponse = $this->LexofficeArticlesManager->delete($articleId);
         dd($deleteResponse);
 
         // 5. Retrieve All Articles with Optional Filters
@@ -173,7 +173,7 @@ class HomeController extends Controller
             'type' => 'PRODUCT', // Example filter to only get 'PRODUCT' type articles
             'gtin' => '9783648170632'
         ];
-        $allArticlesResponse = $this->lexofficeArticles->all($filters);
+        $allArticlesResponse = $this->LexofficeArticlesManager->all($filters);
         dd($allArticlesResponse);
     }
 }

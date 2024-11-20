@@ -23,7 +23,7 @@ Detailed references for each class and its methods available within the package:
 - [LexofficeContactManager](docs/api-reference/LexofficeContactManager.md)  
   Manage contacts using LexOffice API, including creation, updating, retrieval, and deletion of contacts.
 
-- [LexofficeArticles](docs/api-reference/LexofficeArticles.md)  
+- [LexofficeArticlesManager](docs/api-reference/LexofficeArticlesManager.md)  
   Manage articles using the LexOffice API, including creating, updating, retrieving, and deleting articles.
 
 - [More Classes](docs/api-reference)  
