@@ -15,7 +15,7 @@ class LexofficeServiceProvider extends ServiceProvider
         });
 
         $this->app->singleton('lexoffice-articles', function ($app) {
-            return new \Codersgarden\PhpLexofficeApi\LexofficeContactManager();
+            return new \Codersgarden\PhpLexofficeApi\LexofficeArticlesManager();
         });
 
         $this->mergeConfigFrom(__DIR__ . '/../config/lexoffice.php', 'lexoffice');
