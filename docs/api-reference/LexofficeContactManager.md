@@ -1,6 +1,3 @@
-### LexofficeContactManager.md
-
-```markdown
 # LexofficeContactManager Documentation
 
 The `LexofficeContactManager` class provides a set of methods for interacting with LexOffice's contacts API. It allows you to create, update, retrieve, delete, and filter contacts using the Guzzle HTTP client.
