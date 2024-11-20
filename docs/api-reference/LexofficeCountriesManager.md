@@ -57,7 +57,7 @@ public function all(): array
 ### Retrieve All Countries
 
 ```php
-$lexofficeCountriesManager = new LexofficeCountriesManager($client);
+$lexofficeCountriesManager = new LexofficeCountriesManager();
 $response = $lexofficeCountriesManager->all();
 
 if ($response['success']) {
