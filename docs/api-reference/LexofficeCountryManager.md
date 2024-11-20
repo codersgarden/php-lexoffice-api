@@ -1,6 +1,6 @@
-# LexofficeCountriesManager Class Documentation
+# LexofficeCountryManager Class Documentation
 
-The `LexofficeCountriesManager` class provides functionality for retrieving all available countries from the LexOffice API. It enables the retrieval of country codes, names (in English and German), and tax classifications.
+The `LexofficeCountryManager` class provides functionality for retrieving all available countries from the LexOffice API. It enables the retrieval of country codes, names (in English and German), and tax classifications.
 
 ---
 
@@ -19,7 +19,7 @@ The `LexofficeCountriesManager` class provides functionality for retrieving all 
 To use the LexOffice API package, first import the main class:
 
 ```php
-use CodersGarden\LexOfficeApi\LexofficeCountriesManager;
+use CodersGarden\LexOfficeApi\LexofficeCountryManager;
 ```
 
 ---
@@ -57,8 +57,8 @@ public function all(): array
 ### Retrieve All Countries
 
 ```php
-$lexofficeCountriesManager = new LexofficeCountriesManager();
-$response = $lexofficeCountriesManager->all();
+$lexofficeCountryManager = new LexofficeCountryManager();
+$response = $lexofficeCountryManager->all();
 
 if ($response['success']) {
     print_r($response['data']);
@@ -117,7 +117,7 @@ If the API request fails, the method returns an error response with the followin
 ### Example
 
 ```php
-$response = $lexofficeCountriesManager->all();
+$response = $lexofficeCountryManager->all();
 
 if (!$response['success']) {
     echo 'Error (' . $response['status'] . '): ' . $response['error'];

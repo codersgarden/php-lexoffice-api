@@ -15,11 +15,11 @@ class LexofficeServiceProvider extends ServiceProvider
         });
 
         $this->app->singleton('lexoffice-articles', function ($app) {
-            return new \Codersgarden\PhpLexofficeApi\LexofficeArticlesManager();
+            return new \Codersgarden\PhpLexofficeApi\LexofficeArticleManager();
         });
 
         $this->app->singleton('lexoffice-countries', function ($app) {
-            return new \Codersgarden\PhpLexofficeApi\LexofficeCountriesManager();
+            return new \Codersgarden\PhpLexofficeApi\LexofficeCountryManager();
         });
 
         $this->mergeConfigFrom(__DIR__ . '/../config/lexoffice.php', 'lexoffice');

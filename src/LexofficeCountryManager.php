@@ -4,7 +4,7 @@ namespace CodersGarden\PhpLexofficeApi;
 
 use GuzzleHttp\Exception\RequestException;
 
-class LexofficeCountriesManager extends LexofficeBase
+class LexofficeCountryManager extends LexofficeBase
 {
     public function __construct()
     {
@@ -20,7 +20,7 @@ class LexofficeCountriesManager extends LexofficeBase
      * ### Usage Example:
      * - Retrieve all countries:
      *   ```php
-     *   $response = $lexofficeCountriesManager->all();
+     *   $response = $lexofficeCountryManager->all();
      *   if ($response['success']) {
      *       print_r($response['data']);
      *   } else {

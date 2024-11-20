@@ -4,7 +4,7 @@ namespace Codersgarden\PhpLexofficeApi;
 
 use GuzzleHttp\Exception\RequestException;
 
-class LexofficeArticlesManager extends LexofficeBase
+class LexofficeArticleManager extends LexofficeBase
 {
 
     public function __construct()

@@ -32,10 +32,10 @@ Comprehensive references for all classes and methods available in this package:
 - [LexofficeContactManager](docs/api-reference/LexofficeContactManager.md)  
   Manage contacts using LexOffice API, including creation, updating, retrieval, and deletion.
 
-- [LexofficeArticlesManager](docs/api-reference/LexofficeArticlesManager.md)  
+- [LexofficeArticleManager](docs/api-reference/LexofficeArticleManager.md)  
   Manage articles using the LexOffice API, including creating, updating, retrieving, and deleting articles.
 
-- [LexofficeCountriesManager](docs/api-reference/LexofficeCountriesManager.md)  
+- [LexofficeCountryManager](docs/api-reference/LexofficeCountryManager.md)  
   Retrieve and manage country-related data using the LexOffice API.
 
 - [More Classes](docs/api-reference)  
