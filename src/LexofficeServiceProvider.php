@@ -18,7 +18,7 @@ class LexofficeServiceProvider extends ServiceProvider
             return new \Codersgarden\PhpLexofficeApi\LexofficeArticlesManager();
         });
 
-        $this->app->singleton('lexoffice-articles', function ($app) {
+        $this->app->singleton('lexoffice-countries', function ($app) {
             return new \Codersgarden\PhpLexofficeApi\LexofficeCountriesManager();
         });
 
