@@ -23,7 +23,7 @@ After installation, add the service provider to your `config/app.php` file (if y
 ## Requirements
 
 - **PHP**: >=7.3
-- **Laravel**: 9.x, 10.x, 11.x
+- **Laravel**: 8.x, 9.x, 10.x, 11.x
 - **Dependencies**:
   - guzzlehttp/guzzle: ^7.0
   - "illuminate/http": "^7.0|^8.0|^9.0|^10.0|^11.0"
