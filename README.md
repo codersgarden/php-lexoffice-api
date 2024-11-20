@@ -1,6 +1,15 @@
-# Documentation Overview
+# LexOffice API Laravel Package
 
-Welcome to the LexOffice API Laravel Package Documentation. This package offers a set of tools for seamless integration and management of LexOffice APIs within Laravel applications. Below, you'll find comprehensive guides to help you get started, use, and explore the various capabilities offered by this package.
+Welcome to the **LexOffice API Laravel Package Documentation**. This package provides a comprehensive set of tools to integrate and manage LexOffice APIs seamlessly within Laravel applications. With a focus on simplicity and efficiency, this package helps developers interact with LexOffice services for managing contacts, articles, countries, and more.
+
+---
+
+## Features
+
+- Easy setup and integration with Laravel.
+- Manage contacts, articles, and other LexOffice API resources.
+- Full support for CRUD operations and advanced filtering.
+- Structured error handling for API requests.
 
 ---
 
@@ -9,22 +18,51 @@ Welcome to the LexOffice API Laravel Package Documentation. This package offers 
 ### Getting Started
 
 - [Getting Started](docs/getting-started.md)  
-  Quick setup and installation instructions to start using the package.
+  Step-by-step instructions for installing and configuring the package in your Laravel application.
 
 ### Usage
 
 - [Usage](docs/usage.md)  
-  Examples and guidelines on using the core functionality of the package, with detailed examples for different operations.
+  Detailed examples and guidelines for performing various operations using the package.
 
 ### API Reference
 
-Detailed references for each class and its methods available within the package:
+Comprehensive references for all classes and methods available in this package:
 
 - [LexofficeContactManager](docs/api-reference/LexofficeContactManager.md)  
-  Manage contacts using LexOffice API, including creation, updating, retrieval, and deletion of contacts.
+  Manage contacts using LexOffice API, including creation, updating, retrieval, and deletion.
 
 - [LexofficeArticlesManager](docs/api-reference/LexofficeArticlesManager.md)  
   Manage articles using the LexOffice API, including creating, updating, retrieving, and deleting articles.
 
+- [LexofficeCountriesManager](docs/api-reference/LexofficeCountriesManager.md)  
+  Retrieve and manage country-related data using the LexOffice API.
+
 - [More Classes](docs/api-reference)  
-  Additional classes and methods available for other LexOffice API functionalities.
+  Explore additional classes and methods for extended functionalities.
+
+---
+
+## Contribution Guide
+
+We welcome contributions to this package! Follow these steps to contribute:
+
+1. Fork the repository.
+2. Create a feature branch for your changes.
+3. Submit a pull request with detailed explanations of your updates.
+
+For bug reports or feature requests, please open an issue in the repository.
+
+---
+
+## License
+
+This package is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for more details.
+
+---
+
+## Contact Us
+
+For support or inquiries, feel free to contact us via [email](mailto:support@codersgarden.com) or create an issue on our GitHub repository.
+
+---
