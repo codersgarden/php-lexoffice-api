@@ -197,4 +197,4 @@ class HomeController extends Controller
         $allArticlesResponse = $this->lexofficeArticlesManager->all($filters);
         dd($allArticlesResponse);
     }
-}```
+}
