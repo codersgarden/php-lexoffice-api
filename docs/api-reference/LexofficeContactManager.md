@@ -6,11 +6,22 @@ The `LexofficeContactManager` class provides a set of methods for interacting wi
 
 ## Table of Contents
 
+- [Using the LexOffice API Package](#using-the-lexoffice-api-package)
 - [Creating a Contact](#creating-a-contact)
 - [Retrieving a Contact by ID](#retrieving-a-contact-by-id)
 - [Updating a Contact](#updating-a-contact)
 - [Deleting a Contact](#deleting-a-contact)
 - [Retrieving All Contacts with Filters](#retrieving-all-contacts-with-filters)
+
+---
+
+### Using the LexOffice API Package
+
+To use the LexOffice API package, first import the main class:
+
+```php
+use Codersgarden\PhpLexofficeApi\LexofficeContactManager;
+```
 
 ---
 
