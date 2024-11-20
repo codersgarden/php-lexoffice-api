@@ -1,6 +1,6 @@
 <?php
 
-namespace CodersGarden\LexOfficeApi;
+namespace CodersGarden\PhpLexofficeApi;
 
 use GuzzleHttp\Exception\RequestException;
 
