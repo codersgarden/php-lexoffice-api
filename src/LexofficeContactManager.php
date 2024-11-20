@@ -2,23 +2,18 @@
 
 namespace Codersgarden\PhpLexofficeApi;
 
-use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 
-class LexofficeContactManager
+class LexofficeContactManager extends LexofficeBase
 {
-    protected $client;
-
+    /**
+     * Create a new instance of the LexofficeContactManager
+     *
+     * @return void
+     */
     public function __construct()
     {
-        $this->client = new Client([
-            'base_uri' => 'https://api.lexoffice.io/v1/',
-            'headers' => [
-                'Accept' => 'application/json',
-                'Content-Type' => 'application/json',
-                'Authorization' => 'Bearer ' . config('lexoffice.api_token')
-            ],
-        ]);
+        parent::__construct();
     }
 
     /**
@@ -87,7 +82,7 @@ class LexofficeContactManager
      * @param string $contactId
      * @return array
      */
-    public function show(string $contactId)
+    public function find(string $contactId)
     {
         try {
             $response = $this->client->get("contacts/{$contactId}");
@@ -109,19 +104,30 @@ class LexofficeContactManager
     }
 
     /**
-     * Get all contacts from lexoffice API using Guzzle
+     * Retrieve all contacts or filter contacts from the LexOffice API.
      *
-     * @return array
-     * [
-     *     'success' => bool,
-     *     'data' => array|mixed,
-     *     'status' => int,
-     *     'error' => string,
-     * ]
+     * This method retrieves all contacts or filters contacts based on the
+     * provided criteria. The filtering mechanism supports query parameters
+     * such as email, name, number, customer, and vendor roles, which can be
+     * combined using logical AND operations.
+     *
+     * Filters that are not set are ignored, and only the provided filters will
+     * be applied. The response includes pagination details when applicable.
+     *
+     * Example filters:
+     * - ['email' => 'max@gmx.de', 'name' => 'Mustermann']
+     * - ['vendor' => true, 'customer' => false]
+     *
+     * @param array $filters Associative array of filter parameters as key-value pairs.
+     *                       Supported keys include 'email', 'name', 'number', 'customer', and 'vendor'.
+     * @return array Response array with 'success' status, 'data' containing the contacts,
+     *               or 'error' with error details.
      */
-    public function get(){
+    public function all(array $filters = [])
+    {
         try {
-            $response = $this->client->get("contacts");
+            $queryParams = http_build_query($filters);
+            $response = $this->client->get("contacts?" . $queryParams);
 
             return [
                 'success' => true,
@@ -138,6 +144,7 @@ class LexofficeContactManager
             ];
         }
     }
+
 
     /**
      * Delete a contact in lexoffice API using Guzzle

@@ -8,14 +8,14 @@ class LexofficeServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        // Register the first class
-        $this->app->singleton('lexoffice-api', function ($app) {
-            return new \Codersgarden\PhpLexofficeApi\SomeMainClass();
-        });
 
         // Register the Contact class
         $this->app->singleton('contact', function ($app) {
-            return new \Codersgarden\PhpLexofficeApi\Contact();
+            return new \Codersgarden\PhpLexofficeApi\LexofficeContactManager();
+        });
+
+        $this->app->singleton('lexoffice-articles', function ($app) {
+            return new \Codersgarden\PhpLexofficeApi\LexofficeArticles();
         });
 
         $this->mergeConfigFrom(__DIR__ . '/../config/lexoffice.php', 'lexoffice');
