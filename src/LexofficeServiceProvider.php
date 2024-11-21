@@ -14,20 +14,24 @@ class LexofficeServiceProvider extends ServiceProvider
             return new \Codersgarden\PhpLexofficeApi\LexofficeContactManager();
         });
 
-        $this->app->singleton('lexoffice-articles', function ($app) {
+        $this->app->singleton('lexoffice-article', function ($app) {
             return new \Codersgarden\PhpLexofficeApi\LexofficeArticleManager();
         });
 
-        $this->app->singleton('lexoffice-countries', function ($app) {
+        $this->app->singleton('lexoffice-country', function ($app) {
             return new \Codersgarden\PhpLexofficeApi\LexofficeCountryManager();
         });
 
-        $this->app->singleton('lexoffice-credit-notes', function ($app) {
-            return new \Codersgarden\PhpLexofficeApi\LexofficeCreditNotesManager();
+        $this->app->singleton('lexoffice-credit-note', function ($app) {
+            return new \Codersgarden\PhpLexofficeApi\LexofficeCreditNoteManager();
         });
 
-        $this->app->singleton('lexoffice-delivery-notes', function ($app) {
+        $this->app->singleton('lexoffice-delivery-note', function ($app) {
             return new \Codersgarden\PhpLexofficeApi\LexofficeDeliveryNotesManager();
+        });
+
+        $this->app->singleton('lexoffice-file', function ($app) {
+            return new \Codersgarden\PhpLexofficeApi\LexofficeFileManager();
         });
 
         $this->mergeConfigFrom(__DIR__ . '/../config/lexoffice.php', 'lexoffice');

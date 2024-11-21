@@ -1,6 +1,6 @@
-# LexofficeCreditNotesManager Class Documentation
+# LexofficeCreditNoteManager Class Documentation
 
-The `LexofficeCreditNotesManager` class provides seamless integration with the LexOffice API for managing credit notes. This class supports operations such as creating, retrieving, finalizing, pursuing to credit notes, rendering PDF documents, and generating deeplinks for credit notes.
+The `LexofficeCreditNoteManager` class provides seamless integration with the LexOffice API for managing credit notes. This class supports operations such as creating, retrieving, finalizing, pursuing to credit notes, rendering PDF documents, and generating deeplinks for credit notes.
 
 ---
 
@@ -28,10 +28,10 @@ The `LexofficeCreditNotesManager` class provides seamless integration with the L
 
 ## Import Class File
 
-To use this class, ensure that the LexOffice API package is installed and include the `LexofficeCreditNotesManager` class in your Laravel controller or service.
+To use this class, ensure that the LexOffice API package is installed and include the `LexofficeCreditNoteManager` class in your Laravel controller or service.
 
 ```php
-use Codersgarden\PhpLexofficeApi\LexofficeCreditNotesManager;
+use Codersgarden\PhpLexofficeApi\LexofficeCreditNoteManager;
 ```
 
 ---
@@ -73,7 +73,7 @@ $creditNoteData = [
     'remark' => 'Closing remarks for the credit note',
 ];
 
-$response = $lexofficeCreditNotesManager->create($creditNoteData, true); // Pass true to finalize
+$response = $lexofficeCreditNoteManager->create($creditNoteData, true); // Pass true to finalize
 ```
 
 **Return Value:**
@@ -92,7 +92,7 @@ Fetch detailed information of a credit note by its ID.
 **Example:**
 ```php
 $creditNoteId = '66bc42a2-cbab-4532-9f90-83bcda139002';
-$response = $lexofficeCreditNotesManager->find($creditNoteId);
+$response = $lexofficeCreditNoteManager->find($creditNoteId);
 ```
 
 **Return Value:**
@@ -137,7 +137,7 @@ $creditNoteData = [
     'taxConditions' => ['taxType' => 'net'],
 ];
 
-$response = $lexofficeCreditNotesManager->pursueToCreditNote($precedingSalesVoucherId, $creditNoteData, true); // Finalized
+$response = $lexofficeCreditNoteManager->pursueToCreditNote($precedingSalesVoucherId, $creditNoteData, true); // Finalized
 ```
 
 **Return Value:**
@@ -156,7 +156,7 @@ Triggers rendering of a credit note's PDF document.
 **Example:**
 ```php
 $creditNoteId = '66bc42a2-cbab-4532-9f90-83bcda139002';
-$response = $lexofficeCreditNotesManager->renderDocument($creditNoteId);
+$response = $lexofficeCreditNoteManager->renderDocument($creditNoteId);
 ```
 
 **Return Value:**
@@ -175,8 +175,8 @@ $response = $lexofficeCreditNotesManager->renderDocument($creditNoteId);
 **Example:**
 ```php
 $creditNoteId = '66bc42a2-cbab-4532-9f90-83bcda139002';
-$viewUrl = $lexofficeCreditNotesManager->getViewDeeplink($creditNoteId);
-$editUrl = $lexofficeCreditNotesManager->getEditDeeplink($creditNoteId);
+$viewUrl = $lexofficeCreditNoteManager->getViewDeeplink($creditNoteId);
+$editUrl = $lexofficeCreditNoteManager->getEditDeeplink($creditNoteId);
 
 echo "View Credit Note: " . $viewUrl;
 echo "Edit Credit Note: " . $editUrl;
@@ -186,22 +186,22 @@ echo "Edit Credit Note: " . $editUrl;
 
 ## Example Usage in a Laravel Controller
 
-Below is an example of how to use the `LexofficeCreditNotesManager` class in a Laravel controller:
+Below is an example of how to use the `LexofficeCreditNoteManager` class in a Laravel controller:
 
 ```php
 <?php
 
 namespace App\Http\Controllers;
 
-use Codersgarden\PhpLexofficeApi\LexofficeCreditNotesManager;
+use Codersgarden\PhpLexofficeApi\LexofficeCreditNoteManager;
 
 class HomeController extends Controller
 {
-    protected $lexofficeCreditNotesManager;
+    protected $lexofficeCreditNoteManager;
 
     public function __construct()
     {
-        $this->lexofficeCreditNotesManager = new LexofficeCreditNotesManager();
+        $this->LexofficeCreditNoteManager = new LexofficeCreditNoteManager();
     }
 
     public function index()
@@ -209,14 +209,14 @@ class HomeController extends Controller
         $creditNoteId = '66bc42a2-cbab-4532-9f90-83bcda139002';
 
         // 1. Find Credit Note
-        $response = $this->lexofficeCreditNotesManager->find($creditNoteId);
+        $response = $this->LexofficeCreditNoteManager->find($creditNoteId);
 
         // 2. Render Credit Note PDF
-        $response = $this->lexofficeCreditNotesManager->renderDocument($creditNoteId);
+        $response = $this->LexofficeCreditNoteManager->renderDocument($creditNoteId);
 
         // 3. Generate Deeplinks
-        $viewUrl = $this->lexofficeCreditNotesManager->getViewDeeplink($creditNoteId);
-        $editUrl = $this->lexofficeCreditNotesManager->getEditDeeplink($creditNoteId);
+        $viewUrl = $this->LexofficeCreditNoteManager->getViewDeeplink($creditNoteId);
+        $editUrl = $this->LexofficeCreditNoteManager->getEditDeeplink($creditNoteId);
 
         dd($response, $viewUrl, $editUrl);
     }

@@ -5,7 +5,7 @@ namespace CodersGarden\PhpLexofficeApi;
 use Codersgarden\PhpLexofficeApi\LexofficeBase;
 use GuzzleHttp\Exception\RequestException;
 
-class LexofficeCreditNotesManager extends LexofficeBase
+class LexofficeCreditNoteManager extends LexofficeBase
 {
     public function __construct()
     {
@@ -55,7 +55,7 @@ class LexofficeCreditNotesManager extends LexofficeBase
      *     'remark' => 'Closing remarks for the credit note',
      * ];
      * 
-     * $response = $lexofficeCreditNotesManager->create($creditNoteData);
+     * $response = $lexofficeCreditNoteManager->create($creditNoteData);
      * ```
      *
      * ### Return Value:
@@ -136,7 +136,7 @@ class LexofficeCreditNotesManager extends LexofficeBase
      *     ],
      * ];
      * 
-     * $response = $lexofficeCreditNotesManager->pursueToCreditNote($precedingSalesVoucherId, $creditNoteData, true);
+     * $response = $lexofficeCreditNoteManager->pursueToCreditNote($precedingSalesVoucherId, $creditNoteData, true);
      * ```
      *
      * ### Return Value:
@@ -185,7 +185,7 @@ class LexofficeCreditNotesManager extends LexofficeBase
      * ### Usage Example:
      * ```php
      * $creditNoteId = 'e9066f04-8cc7-4616-93f8-ac9ecc8479c8';
-     * $response = $lexofficeCreditNotesManager->find($creditNoteId);
+     * $response = $lexofficeCreditNoteManager->find($creditNoteId);
      * if ($response['success']) {
      *     print_r($response['data']);
      * } else {
@@ -232,7 +232,7 @@ class LexofficeCreditNotesManager extends LexofficeBase
      * ### Usage Example:
      * ```php
      * $creditNoteId = 'e9066f04-8cc7-4616-93f8-ac9ecc8479c8';
-     * $response = $lexofficeCreditNotesManager->renderDocument($creditNoteId);
+     * $response = $lexofficeCreditNoteManager->renderDocument($creditNoteId);
      * if ($response['success']) {
      *     echo 'Document File ID: ' . $response['data']['documentFileId'];
      * } else {
@@ -278,7 +278,7 @@ class LexofficeCreditNotesManager extends LexofficeBase
      * ### Usage Example:
      * ```php
      * $creditNoteId = 'e9066f04-8cc7-4616-93f8-ac9ecc8479c8';
-     * $viewUrl = $lexofficeCreditNotesManager->getViewDeeplink($creditNoteId);
+     * $viewUrl = $lexofficeCreditNoteManager->getViewDeeplink($creditNoteId);
      * echo "View Credit Note URL: " . $viewUrl;
      * ```
      *
@@ -298,7 +298,7 @@ class LexofficeCreditNotesManager extends LexofficeBase
      * ### Usage Example:
      * ```php
      * $creditNoteId = 'e9066f04-8cc7-4616-93f8-ac9ecc8479c8';
-     * $editUrl = $lexofficeCreditNotesManager->getEditDeeplink($creditNoteId);
+     * $editUrl = $lexofficeCreditNoteManager->getEditDeeplink($creditNoteId);
      * echo "Edit Credit Note URL: " . $editUrl;
      * ```
      *

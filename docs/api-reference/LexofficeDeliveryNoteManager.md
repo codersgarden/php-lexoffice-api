@@ -1,6 +1,6 @@
-# **LexofficeDeliveryNotesManager Class Documentation**
+# **LexofficeDeliveryNoteManager Class Documentation**
 
-The `LexofficeDeliveryNotesManager` class provides seamless integration with the LexOffice API for managing delivery notes. This class supports operations such as creating, retrieving, pursuing, and rendering delivery note documents, as well as generating deeplinks for viewing and editing delivery notes.
+The `LexofficeDeliveryNoteManager` class provides seamless integration with the LexOffice API for managing delivery notes. This class supports operations such as creating, retrieving, pursuing, and rendering delivery note documents, as well as generating deeplinks for viewing and editing delivery notes.
 
 ---
 
@@ -20,7 +20,7 @@ The `LexofficeDeliveryNotesManager` class provides seamless integration with the
 To use the LexOffice API package, first import the main class:
 
 ```php
-use Codersgarden\PhpLexofficeApi\LexofficeDeliveryNotesManager;
+use Codersgarden\PhpLexofficeApi\LexofficeDeliveryNoteManager;
 ```
 ---
 
@@ -28,7 +28,7 @@ use Codersgarden\PhpLexofficeApi\LexofficeDeliveryNotesManager;
 
 #### **Method**
 ```php
-$response = $lexofficeDeliveryNotesManager->create(array $data, bool $finalize = false);
+$response = $lexofficeDeliveryNoteManager->create(array $data, bool $finalize = false);
 ```
 
 #### **Parameters**
@@ -73,7 +73,7 @@ $deliveryNoteData = [
     'remark' => 'Closing remarks for the delivery note',
 ];
 
-$response = $lexofficeDeliveryNotesManager->create($deliveryNoteData);
+$response = $lexofficeDeliveryNoteManager->create($deliveryNoteData);
 ```
 
 ---
@@ -82,7 +82,7 @@ $response = $lexofficeDeliveryNotesManager->create($deliveryNoteData);
 
 #### **Method**
 ```php
-$response = $lexofficeDeliveryNotesManager->find(string $deliveryNoteId);
+$response = $lexofficeDeliveryNoteManager->find(string $deliveryNoteId);
 ```
 
 #### **Parameters**
@@ -90,7 +90,7 @@ $response = $lexofficeDeliveryNotesManager->find(string $deliveryNoteId);
 
 #### **Example**
 ```php
-$response = $lexofficeDeliveryNotesManager->find('6bb05596-e2df-488b-9548-34b58077f294');
+$response = $lexofficeDeliveryNoteManager->find('6bb05596-e2df-488b-9548-34b58077f294');
 ```
 
 ---
@@ -99,7 +99,7 @@ $response = $lexofficeDeliveryNotesManager->find('6bb05596-e2df-488b-9548-34b580
 
 #### **Method**
 ```php
-$response = $lexofficeDeliveryNotesManager->pursueToDeliveryNote(string $precedingSalesVoucherId, array $data = []);
+$response = $lexofficeDeliveryNoteManager->pursueToDeliveryNote(string $precedingSalesVoucherId, array $data = []);
 ```
 
 #### **Parameters**
@@ -119,7 +119,7 @@ $deliveryNoteData = [
     ],
 ];
 
-$response = $lexofficeDeliveryNotesManager->pursueToDeliveryNote('e9066f04-8cc7-4616-93f8-ac9ecc8479c8', $deliveryNoteData);
+$response = $lexofficeDeliveryNoteManager->pursueToDeliveryNote('e9066f04-8cc7-4616-93f8-ac9ecc8479c8', $deliveryNoteData);
 ```
 
 ---
@@ -128,7 +128,7 @@ $response = $lexofficeDeliveryNotesManager->pursueToDeliveryNote('e9066f04-8cc7-
 
 #### **Method**
 ```php
-$response = $lexofficeDeliveryNotesManager->renderDocument(string $deliveryNoteId);
+$response = $lexofficeDeliveryNoteManager->renderDocument(string $deliveryNoteId);
 ```
 
 #### **Parameters**
@@ -136,7 +136,7 @@ $response = $lexofficeDeliveryNotesManager->renderDocument(string $deliveryNoteI
 
 #### **Example**
 ```php
-$response = $lexofficeDeliveryNotesManager->renderDocument('6bb05596-e2df-488b-9548-34b58077f294');
+$response = $lexofficeDeliveryNoteManager->renderDocument('6bb05596-e2df-488b-9548-34b58077f294');
 ```
 
 ---
@@ -145,34 +145,34 @@ $response = $lexofficeDeliveryNotesManager->renderDocument('6bb05596-e2df-488b-9
 
 #### **View Deeplink**
 ```php
-$url = $lexofficeDeliveryNotesManager->getViewDeeplink('6bb05596-e2df-488b-9548-34b58077f294');
+$url = $lexofficeDeliveryNoteManager->getViewDeeplink('6bb05596-e2df-488b-9548-34b58077f294');
 ```
 
 #### **Edit Deeplink**
 ```php
-$url = $lexofficeDeliveryNotesManager->getEditDeeplink('6bb05596-e2df-488b-9548-34b58077f294');
+$url = $lexofficeDeliveryNoteManager->getEditDeeplink('6bb05596-e2df-488b-9548-34b58077f294');
 ```
 
 ---
 
 ## Example Usage in a Controller
 
-Below is a complete example demonstrating how to use the `LexofficeDeliveryNotesManager` class within a Laravel controller:
+Below is a complete example demonstrating how to use the `LexofficeDeliveryNoteManager` class within a Laravel controller:
 
 ```php
 <?php
 
 namespace App\Http\Controllers;
 
-use Codersgarden\PhpLexofficeApi\LexofficeDeliveryNotesManager;
+use Codersgarden\PhpLexofficeApi\LexofficeDeliveryNoteManager;
 
 class HomeController extends Controller
 {
-    protected $lexofficeDeliveryNotesManager;
+    protected $lexofficeDeliveryNoteManager;
 
-    public function __construct(LexofficeDeliveryNotesManager $lexofficeDeliveryNotesManager)
+    public function __construct(LexofficeDeliveryNoteManager $lexofficeDeliveryNoteManager)
     {
-        $this->lexofficeDeliveryNotesManager = $lexofficeDeliveryNotesManager;
+        $this->LexofficeDeliveryNoteManager = $lexofficeDeliveryNoteManager;
     }
 
     public function index()
@@ -214,15 +214,15 @@ class HomeController extends Controller
             'remark' => 'Closing remarks for the delivery note',
         ];
 
-        $createResponse = $this->lexofficeDeliveryNotesManager->create($deliveryNoteData);
+        $createResponse = $this->LexofficeDeliveryNoteManager->create($deliveryNoteData);
         dd($createResponse);
 
         // Retrieve a Delivery Note by ID
-        $findResponse = $this->lexofficeDeliveryNotesManager->find('6bb05596-e2df-488b-9548-34b58077f294');
+        $findResponse = $this->LexofficeDeliveryNoteManager->find('6bb05596-e2df-488b-9548-34b58077f294');
         dd($findResponse);
 
         // Render a Delivery Note Document
-        $renderResponse = $this->lexofficeDeliveryNotesManager->renderDocument('6bb05596-e2df-488b-9548-34b58077f294');
+        $renderResponse = $this->LexofficeDeliveryNoteManager->renderDocument('6bb05596-e2df-488b-9548-34b58077f294');
         dd($renderResponse);
     }
 }

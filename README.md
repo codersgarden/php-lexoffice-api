@@ -25,6 +25,10 @@ Welcome to the **LexOffice API Laravel Package Documentation**. This package pro
 - [Usage](docs/usage.md)  
   Detailed examples and guidelines for performing various operations using the package.
 
+Here's the updated **API Reference** section for your README file with the new `LexofficeFileManager` class added:
+
+---
+
 ### API Reference
 
 Comprehensive references for all classes and methods available in this package:
@@ -38,16 +42,20 @@ Comprehensive references for all classes and methods available in this package:
 - [LexofficeCountryManager](docs/api-reference/LexofficeCountryManager.md)  
   Retrieve and manage country-related data using the LexOffice API.
 
-- [LexofficeDeliveryNotesManager](docs/api-reference/LexofficeDeliveryNotesManager.md)  
+- [LexofficeDeliveryNoteManager](docs/api-reference/LexofficeDeliveryNoteManager.md)  
   Manage delivery notes, including creation, pursuing, and rendering documents.
 
-- [LexofficeCreditNotesManager](docs/api-reference/LexofficeCreditNotesManager.md)  
-  Manage  creating, retrieving, finalizing, pursuing to credit notes, rendering PDF documents, and generating deeplinks for credit notes.
+- [LexofficeCreditNoteManager](docs/api-reference/LexofficeCreditNotesManager.md)  
+  Manage creating, retrieving, finalizing, pursuing to credit notes, rendering PDF documents, and generating deeplinks for credit notes.
+
+- [LexofficeFileManager](docs/api-reference/LexofficeFileManager.md)  
+  Upload and download files using the LexOffice API, and generate deeplinks for uploaded files.
 
 - [More Classes](docs/api-reference)  
   Explore additional classes and methods for extended functionalities.
 
 ---
+
 
 ## Contribution Guide
 
