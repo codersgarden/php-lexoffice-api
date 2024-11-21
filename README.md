@@ -38,6 +38,9 @@ Comprehensive references for all classes and methods available in this package:
 - [LexofficeCountryManager](docs/api-reference/LexofficeCountryManager.md)  
   Retrieve and manage country-related data using the LexOffice API.
 
+- [LexofficeDeliveryNotesManager](docs/api-reference/LexofficeDeliveryNotesManager.md)  
+  Manage delivery notes, including creation, pursuing, and rendering documents.
+
 - [More Classes](docs/api-reference)  
   Explore additional classes and methods for extended functionalities.
 
