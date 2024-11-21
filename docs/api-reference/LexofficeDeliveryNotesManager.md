@@ -22,12 +22,6 @@ To use the LexOffice API package, first import the main class:
 ```php
 use Codersgarden\PhpLexofficeApi\LexofficeDeliveryNotesManager;
 ```
-
-Ensure you have the required libraries installed:
-```bash
-composer require guzzlehttp/guzzle illuminate/support
-```
-
 ---
 
 ### **1. Creating a Delivery Note**
