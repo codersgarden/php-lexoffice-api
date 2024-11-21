@@ -22,6 +22,14 @@ class LexofficeServiceProvider extends ServiceProvider
             return new \Codersgarden\PhpLexofficeApi\LexofficeCountryManager();
         });
 
+        $this->app->singleton('lexoffice-credit-notes', function ($app) {
+            return new \Codersgarden\PhpLexofficeApi\LexofficeCreditNotesManager();
+        });
+
+        $this->app->singleton('lexoffice-delivery-notes', function ($app) {
+            return new \Codersgarden\PhpLexofficeApi\LexofficeDeliveryNotesManager();
+        });
+
         $this->mergeConfigFrom(__DIR__ . '/../config/lexoffice.php', 'lexoffice');
     }
 
