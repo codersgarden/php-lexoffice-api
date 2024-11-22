@@ -54,10 +54,14 @@ Comprehensive references for all classes and methods available in this package:
 - [LexofficeInvoiceManager](docs/api-reference/LexofficeInvoiceManager.md)  
   Manage invoices using the LexOffice API, including creating, retrieving, finalizing, rendering PDF documents, and generating deeplinks for invoices.
 
+- [LexofficeOrderConfirmationManager](docs/api-reference/LexofficeOrderConfirmationManager.md)  
+  Manage order confirmations, including creating, retrieving, rendering PDF documents, pursuing sales vouchers, and generating deeplinks.
+
 - [More Classes](docs/api-reference)  
   Explore additional classes and methods for extended functionalities.
 
 ---
+
 
 
 ## Contribution Guide
