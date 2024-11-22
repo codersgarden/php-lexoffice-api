@@ -45,11 +45,14 @@ Comprehensive references for all classes and methods available in this package:
 - [LexofficeDeliveryNoteManager](docs/api-reference/LexofficeDeliveryNoteManager.md)  
   Manage delivery notes, including creation, pursuing, and rendering documents.
 
-- [LexofficeCreditNoteManager](docs/api-reference/LexofficeCreditNoteManager.md)  
+- [LexofficeCreditNoteManager](docs/api-reference/LexofficeCreditNotesManager.md)  
   Manage creating, retrieving, finalizing, pursuing to credit notes, rendering PDF documents, and generating deeplinks for credit notes.
 
 - [LexofficeFileManager](docs/api-reference/LexofficeFileManager.md)  
   Upload and download files using the LexOffice API, and generate deeplinks for uploaded files.
+
+- [LexofficeInvoiceManager](docs/api-reference/LexofficeInvoiceManager.md)  
+  Manage invoices using the LexOffice API, including creating, retrieving, finalizing, rendering PDF documents, and generating deeplinks for invoices.
 
 - [More Classes](docs/api-reference)  
   Explore additional classes and methods for extended functionalities.

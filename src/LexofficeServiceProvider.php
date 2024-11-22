@@ -34,6 +34,10 @@ class LexofficeServiceProvider extends ServiceProvider
             return new \Codersgarden\PhpLexofficeApi\LexofficeFileManager();
         });
 
+        $this->app->singleton('lexoffice-invoice', function ($app) {
+            return new \Codersgarden\PhpLexofficeApi\LexofficeInvoiceManager();
+        });
+
         $this->mergeConfigFrom(__DIR__ . '/../config/lexoffice.php', 'lexoffice');
     }
 
